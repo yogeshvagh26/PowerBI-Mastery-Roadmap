@@ -1,7 +1,7 @@
 # Phase 1: Power BI Fundamentals
 
 
-Welcome to your journey into **Power BI**! This phase lays the groundwork for everything you will build. We will start from the absolute basics and gradually introduce more advanced concepts, always tying them to real‑world business scenarios. Each lesson follows a consistent structure to ensure you not only learn how but also why – so you can apply these skills immediately.
+Welcome to your journey into **Power BI**! This phase lays the groundwork for everything you will build. We will start from the **absolute basics** and gradually introduce more advanced concepts, always tying them to **real‑world business scenarios**. Each lesson follows a consistent structure to ensure you not only learn how but also why – so you can apply these skills immediately.
 
 By the end of this phase, you will be comfortable with the Power BI ecosystem, able to connect to data, understand the two main data connection modes, and navigate the workflow from data to dashboard.
 
@@ -25,7 +25,7 @@ At its core, **Power BI turns raw data into visual stories** that help **decisio
 
 ### Importance and Real‑World Use Cases
 
-**Why it matters**: In today’s data‑driven world, organisations generate massive amounts of data. Power BI democratises data analytics – it empowers everyone, from analysts to executives, to explore data without deep programming skills.
+* **Why it matters**: In today’s data‑driven world, organisations generate massive amounts of data. Power BI democratises data analytics – it empowers everyone, from analysts to executives, to explore data without deep programming skills.
 
 * **Common use cases**:
 
@@ -106,7 +106,7 @@ No syntax at this introductory stage – we are focusing on concepts. In later l
 
 5. How can you change the type of a visual after it is created?
 
-_(Answers are provided at the end of this document.)_
+> _(Answers are provided at the end of this document.)_
 
 ---
 
@@ -431,7 +431,7 @@ Power BI Desktop is the primary authoring tool. It is free and available for dow
 
 ### Interview Questions
 
-1. How do you update Power BI Desktop?
+1. **How do you update Power BI Desktop?**
 
     **Answer:** 
     
@@ -439,7 +439,7 @@ Power BI Desktop is the primary authoring tool. It is free and available for dow
 
     ---
 
-2. Can you install Power BI Desktop on a Mac?
+2. **Can you install Power BI Desktop on a Mac?**
 
     **Answer:** 
     
@@ -447,7 +447,7 @@ Power BI Desktop is the primary authoring tool. It is free and available for dow
 
     ---
 
-3. What is the purpose of signing in to Power BI Desktop?
+3. **What is the purpose of signing in to Power BI Desktop?**
 
     **Answer:** 
     
@@ -620,13 +620,13 @@ Other key UI elements:
 
 ### Summary and Revision Notes
 
-**Three views**: Report (design), Data (inspect), Model (relationships).
+* **Three views**: Report (design), Data (inspect), Model (relationships).
 
-**Key panes**: Visualizations, Fields, Filters.
+* **Key panes**: Visualizations, Fields, Filters.
 
-Use pages to organise content; use slicers for interactivity.
+* Use pages to organise content; use slicers for interactivity.
 
-Familiarity with the interface saves time and reduces errors.
+* Familiarity with the interface saves time and reduces errors.
 
 ---
 
@@ -648,11 +648,11 @@ Power BI can connect to a vast array of data sources:
 
 **Connections can be made via:**
 
-* Get Data button on the Home ribbon.
+* **Get Data** button on the Home ribbon.
 
-* Recent sources for quick reuse.
+* **Recent sources** for quick reuse.
 
-* Power Query (the query editor) for advanced transformations before loading.
+* **Power Query** (the query editor) for advanced transformations before loading.
 
 ---
 
@@ -672,3 +672,627 @@ Power BI can connect to a vast array of data sources:
 
 ### Step‑by‑Step Demonstration
 
+####  1. Connect to Excel:
+
+* Click **Get Data → Excel**.
+
+* Browse and select your .xlsx file.
+
+* In the Navigator window, check the sheets/tables you want to load.
+
+* Click **Load** (direct load) or **Transform Data** (to clean in Power Query).
+
+#### Connect to SQL Server:
+
+* Click **Get Data** → **SQL Server**.
+
+* Enter the Server name and Database (optional).
+
+* Choose Import or DirectQuery (we cover this in the next lesson).
+
+* Provide credentials (Windows or SQL authentication).
+
+* Select tables/views and load.
+
+#### Connect to Web:
+
+* Click **Get Data → Web**.
+
+* Enter a URL that returns data (e.g., a CSV file hosted online or an OData feed).
+
+* Provide any necessary authentication.
+
+* Preview and load.
+
+---
+
+### Syntax and Rules (if applicable)
+
+* No syntax, but note that when connecting to databases, you may need to write SQL queries (e.g., `SELECT * FROM Sales`). Power BI allows you to enter native SQL queries in the Advanced options.
+
+* For web APIs, you may need to provide parameters (e.g., API keys) in the URL or via headers – this is handled in Power Query.
+
+---
+
+### Practical Examples
+
+* **Example 1:** You have monthly sales reports in CSV files. You use Power BI’s Folder connector to combine all CSV files in a folder, automatically appending them.
+
+* **Example 2:** You connect to a SQL Server view that already pre‑aggregates daily sales; you load that directly.
+
+---
+
+### Hands‑on Exercises
+
+1. Download a sample Excel file from the internet (e.g., from Kaggle) and connect to it.
+
+2. Connect to a public web data source (e.g., a CSV from data.gov).
+
+3. In the Navigator, select only specific columns (using the “Transform Data” option) before loading.
+
+4. Load both data sources into the same Power BI file (they will appear as separate tables).
+
+5. In Model view, try to create a relationship between them (if they share a common key).
+
+---
+
+### Mini Quiz
+
+1. List three types of data sources Power BI can connect to.
+
+2. What is the Navigator window used for?
+
+3. How do you combine multiple Excel files from a folder?
+
+4. What is the difference between “Load” and “Transform Data” when getting data?
+
+5. Can you connect to an Oracle database? If so, what additional software might you need?
+
+---
+
+### Common Mistakes and Best Practices
+
+| Common Mistakes | Best Practices |
+| :--- | :--- |
+| Loading entire tables instead of selecting only necessary columns – increases memory usage. | Use "Transform Data" to remove unnecessary columns before loading. |
+| Using default credentials when connecting to sensitive data sources – may cause permission errors. | Always configure proper authentication (e.g., use Windows Authentication, OAuth, or stored credentials). |
+| Not using parameters for changing file paths or server names. | Use Power Query parameters to make reports portable (e.g., for development vs. production). |
+
+---
+
+### Interview Questions
+
+
+1. **What are the most common data sources used in Power BI in an enterprise environment?**
+
+    **Answer:** SQL Server, Azure SQL, Excel, SharePoint, and often cloud data warehouses like Snowflake or BigQuery.
+
+    ---
+
+2. **How do you handle large data volumes when connecting to a database?**
+
+    **Answer:** Use DirectQuery (to avoid importing all data), or filter data at the source using SQL queries, or use incremental refresh.
+
+    ---
+
+3. **Can you connect to an on‑premise data source from Power BI Service?**
+
+    **Answer:** Yes, using a Data Gateway (on‑premises data gateway) to bridge cloud and on‑premise environments.
+
+---
+
+### Assignment and Dashboard Projects
+
+**Assignment 5** – Create a report that combines two different sources:
+
+* **Source 1**: Excel file with product information.
+
+* **Source 2**: CSV file with sales transactions.
+
+* Load both, establish a relationship (e.g., `ProductID`), and create a visual showing total sales by product category.
+
+---
+
+### Summary and Revision Notes
+
+* Power BI supports a wide variety of data sources – files, databases, cloud services, and web APIs.
+
+* Use **Get Data** to connect; use Navigator to select tables and preview.
+
+* Always consider which columns you really need to reduce load.
+
+* Use Transform Data to open Power Query Editor for cleaning and shaping.
+
+---
+
+## Lesson 1.6 – Import Mode vs DirectQuery
+
+#### Concept Explanation
+
+When you connect to a data source, you have two primary storage modes:
+
+* #### Import Mode:
+
+    * Data is loaded into Power BI’s in‑memory engine (VertiPaq) and stored in the .pbix file.
+
+    * All queries run against the cached data – extremely fast performance.
+
+    * You can use all DAX functions and complex calculations.
+
+    * Data is static until you refresh (manually or scheduled).
+
+* #### DirectQuery:
+
+    * Data is not imported; instead, Power BI sends queries directly to the underlying source (e.g., SQL Server) every time you interact with a visual.
+
+    * Data is always up‑to‑date (no refresh needed).
+
+    * Performance depends on the source’s response time and network latency.
+
+    * Some DAX functions are not supported, and certain modelling features are limited.
+
+There is also **Composite Model** – a hybrid where some tables are Imported and others are DirectQuery, allowing you to combine both approaches.
+
+---
+
+### Importance and Real‑World Use Cases
+
+* **Why it matters**: Choosing the right mode is critical for report performance and data freshness. If you need real‑time data, DirectQuery is attractive; if you need complex calculations and fast visuals, Import is better.
+
+* **Use cases**:
+
+    * **Import** for historical analysis (e.g., monthly sales reports) where data does not change frequently.
+
+    * **DirectQuery** for operational dashboards that must reflect the latest transactions (e.g., live inventory levels).
+
+    * **Composite** for scenarios where you have a large fact table (DirectQuery) and small dimension tables (Import) to balance performance.
+
+
+---
+
+### Step‑by‑Step Demonstration
+
+1. **Connect to SQL Server** – In the Get Data dialog, after entering server and database, you will see a Data Connectivity mode dropdown:
+
+    * Choose Import or DirectQuery.
+
+2. **Select tables** – For DirectQuery, you cannot perform complex transformations in Power Query (many steps are limited). You will see a warning.
+
+3. **Build a visual** – In Import mode, changing a slicer is instantaneous. In DirectQuery, each slicer change sends a new query to the database – you may notice a slight delay.
+
+4. **Check the model** – In DirectQuery, certain features like calculated tables, calculated columns with time intelligence, and some DAX functions (e.g., `RANKX` over aggregated data) are disabled or have performance implications.
+
+---
+
+### Syntax and Rules (if applicable)
+
+* No specific syntax, but understanding the limitations is key:
+
+    * In DirectQuery, DAX measures that aggregate large datasets can be slow; it’s better to push aggregations to the source.
+
+    * You cannot use M (Power Query) transformations that are not supported by the source (e.g., merging tables across different sources may not be allowed).
+
+* **Best practice**: Use Import for all but the largest datasets, or when real‑time is a strict requirement.
+
+---
+
+### Practical Examples
+
+* **Example 1**: You are building a dashboard for a retail chain to monitor hourly sales. You use DirectQuery to an Azure SQL Database so that store managers see live data.
+
+
+* **Example 2**: You are building a year‑over‑year trend report for the board. You use Import mode because the data is static (only refreshed monthly) and you need complex DAX time intelligence.
+
+---
+
+### Hands‑on Exercises
+
+1. Connect to the Financial Sample (which is loaded as Import by default). Note the performance.
+
+2. Try to connect to a SQL Server (if you have access) using DirectQuery, or simulate by using a large CSV (though CSV is always imported).
+
+3. If you have a SQL Server, create a DirectQuery report and compare the response time with a similar Import report.
+
+4. Create a measure in Import mode that uses `CALCULATE` and time intelligence. Then try to create the same measure in DirectQuery mode – note the differences (some functions may not work).
+
+---
+
+### Mini Quiz
+
+1. What is the main advantage of Import mode?
+
+2. When would you choose DirectQuery?
+
+3. Can you use calculated columns in DirectQuery?
+
+4. What is a Composite model?
+
+5. How does DirectQuery affect performance?
+
+---
+
+### Common Mistakes and Best Practices
+
+| Common Mistakes | Best Practices |
+| :--- | :--- |
+| Using DirectQuery for every report because it "feels" real-time – but causing slow performance. | Reserve DirectQuery only when real-time is required and the source is optimised for query performance. |
+| Applying heavy transformations in Power Query when using DirectQuery – these are pushed to the source and may be slow. | Perform transformations in the source (e.g., create views) or use Import mode for complex shapes. |
+| Not using Aggregations in DirectQuery to improve performance (e.g., creating pre-aggregated tables). | Consider using aggregations or a composite model to cache high-level summaries. |
+
+---
+
+### Interview Questions
+
+1. **What is the difference between Import and DirectQuery in terms of data refresh?**
+
+    **Answer**: Import requires a manual or scheduled refresh to update data; DirectQuery always shows the latest data from the source without refresh.
+
+    ---
+
+2. **How do you decide which mode to use?**
+
+    **Answer**: Consider dataset size, required data freshness, complexity of DAX, and source performance. Use Import for smaller to medium datasets and complex calculations; use DirectQuery for large datasets that need real‑time updates.
+
+    ---
+
+3. **What are the limitations of DirectQuery?**
+
+    **Answer**: Limited DAX functions, no calculated tables (except via views), slower performance with many visuals, and limited transform capabilities in Power Query.
+
+---
+
+### Assignment and Dashboard Projects
+
+**Assignment 6** – Write a report comparing the performance of Import vs DirectQuery. Use a large public dataset (e.g., from `data.gov`). If you don’t have a database, simulate by using a large CSV (import) and note the load time. For DirectQuery, try connecting to a sample Azure SQL database (free tier) and measure response times for visuals. Document your findings and recommendations.
+
+---
+
+### Summary and Revision Notes
+
+* Import mode: fast, offline, but needs refresh.
+
+* DirectQuery: real‑time, but slower and limited DAX.
+
+* Composite mode: best of both worlds.
+
+* Choose based on data volume, freshness needs, and performance requirements.
+
+---
+
+## Lesson 1.7 – Understanding the Power BI Workflow
+
+### Concept Explanation
+
+The typical workflow in Power BI can be broken down into six steps:
+
+* **Get Data** – Connect to one or more data sources (files, databases, web).
+
+* **Transform Data** – Clean, reshape, and enrich data using Power Query Editor (remove columns, change data types, merge/append tables, add custom columns, etc.).
+
+* **Model Data** – Define relationships between tables, create calculated columns and measures (using DAX), and organise tables into a star schema.
+
+* **Visualise Data** – Drag fields onto the report canvas, choose visuals, apply filters, and arrange layouts.
+
+* **Share Reports** – Publish to Power BI Service, create dashboards, set up scheduled refresh, and manage permissions.
+
+* **Consume and Iterate** – End‑users view reports/dashboards; they provide feedback; you refine the report.
+
+This workflow is iterative – you often go back to earlier steps as new requirements emerge.
+
+---
+
+### Importance and Real‑World Use Cases
+
+* **Why it matters**: Understanding the workflow ensures you don’t skip critical steps (like data modelling) that could lead to inaccurate reports. It also helps you collaborate with others (e.g., data engineers who prepare the data, business users who define KPIs).
+
+* **Use cases**: A typical project: Business users ask for a sales dashboard. You connect to the data warehouse, clean the data, build relationships, create measures (e.g., `Total Sales`, `% Growth`), design visuals, publish, and then adjust based on user feedback.
+
+---
+
+### Step‑by‑Step Demonstration (End‑to‑End)
+
+We will walk through a mini‑project:
+
+1. **Get Data**: Connect to the “Financial Sample” (built‑in) or an Excel file.
+
+2. **Transform**: Open Power Query Editor (by clicking “Transform Data”). Notice the data. Change the `Date` column type to Date. Remove any columns you don’t need (e.g., `Units Sold`? We’ll keep it).
+
+3. **Model**: In Model view, create a calculated column: `Year` = YEAR([Date]). Create a measure: `Total Sales` = SUM(Financials[Sales]).
+
+4. **Visualise**: Build a report page with:
+
+    * Card: `Total Sales`.
+
+    * Clustered bar chart: Sales by Product.
+
+    * Line chart: Sales over time.
+
+    * Slicer: Year.
+
+* **Share**: Publish to Power BI Service (requires a Pro license). Set up a scheduled refresh (if data source supports it).
+
+* **Iterate**: After sharing, a user asks for a breakdown by country. You go back to step 2, add a country field, update the model, and republish.
+
+This demonstrates the iterative nature.
+
+---
+
+### Syntax and Rules (if applicable)
+
+* We will cover DAX in later phases, but for now, note that you can create measures using simple aggregation functions like `SUM`, `AVERAGE`, `COUNT`.
+
+* Power Query M syntax will be covered in Phase 2; for now, we use the UI.
+
+---
+
+### Practical Examples
+
+* **Example**: A project to build a customer churn dashboard. Workflow:
+
+1. Connect to CRM database and usage logs.
+
+2. Transform: clean missing values, merge datasets.
+
+3. Model: define relationships, create measures for churn rate, active customers.
+
+4. Visualise: show churn trend, segmentation by plan type.
+
+5. Share: publish to the customer success team.
+
+6. Iterate: add a “predicted churn” column based on a simple rule.
+
+---
+
+### Hands‑on Exercises
+
+1. Open Power BI Desktop and start a new file.
+
+2. Load the Financial Sample.
+
+3. In Power Query Editor, do the following:
+
+    *   Change the data type of `Date` to Date.
+
+    *   Add a new column using “Add Column” → “Custom Column” with formula: `[Sales] * 0.8` to simulate cost. Name it `Cost`.
+
+    *   Remove the `Segment` column (if you think it’s unnecessary).
+
+    *   Close & Apply.
+
+4. In Report view, create:
+
+    * A measure `Total Profit` = SUM(Financials[Sales]) - SUM(Financials[Cost]).
+
+    * A visual showing Profit by Country.
+
+5. Save and publish (if you have a Power BI Service account) – or just save the .pbix.
+
+
+---
+
+### Mini Quiz
+
+1. List the six steps of the Power BI workflow.
+
+2. What is the purpose of the Power Query Editor?
+
+3. Why is data modelling important?
+
+4. How do you share a report with others?
+
+5. What does “iteration” mean in this context?
+
+
+---
+
+### Common Mistakes and Best Practices
+
+| Common Mistakes | Best Practices |
+| :--- | :--- |
+| Skipping data transformation – leads to wrong numbers and slow performance. | Always inspect data in Power Query; clean it before loading. |
+| Not using measures for calculations – instead creating calculated columns that increase file size. | Use measures for aggregations; use calculated columns only for row-level calculations (e.g., concatenation, flags). |
+| Publishing without testing – broken visuals or wrong data. | Test thoroughly in Desktop; use the “Analyze in Excel” feature to check accuracy. |
+| Forgetting to set up refresh for imported data. | Configure scheduled refresh in Power BI Service after publishing. |
+
+---
+
+### Interview Questions
+
+1. **Walk me through the process of building a Power BI report from scratch.**
+
+    **Answer**: 
+    
+    (Summarise the six steps, highlighting the importance of each.)
+
+    ---
+
+2. **How do you handle changes to the data source (e.g., a new column added)?**
+
+    **Answer**: 
+    
+    Go to Power Query Editor, refresh the preview, then adjust transformations accordingly; then update the model and visuals.
+
+    ---
+
+3. **What is the difference between a measure and a calculated column?**
+
+    **Answer**: 
+    
+    A calculated column is computed row‑by‑row during data load and stored; a measure is computed dynamically during visualisation based on the current context.
+
+---
+
+### Assignment and Dashboard Projects
+
+**Assignment 7** (Final Project for Phase 1) – Build a complete dashboard from start to finish using a dataset of your choice (or use the Adventure Works sample). Follow the entire workflow:
+
+* Connect to at least two data sources (e.g., Excel + CSV).
+
+* Transform data (clean, merge/append, add a custom column).
+
+* Model relationships and create at least two measures.
+
+* Create a multi‑page report with:
+
+    *   **Page 1**: Summary KPIs and trends.
+
+    *   **Page 2**: Detailed breakdown by dimension (e.g., product, region).
+
+    *   **Page 3**: Drill‑through details (optional).
+
+* Add slicers and interactivity.
+
+* Save your .pbix file and (if possible) publish to Power BI Service.
+
+* Write a one‑page reflection on your choices (why you chose certain visuals, challenges you faced).
+
+---
+
+### Summary and Revision Notes
+
+* The workflow is cyclical: Get Data → Transform → Model → Visualise → Share → Iterate.
+
+* Power Query is your data preparation powerhouse.
+
+* Modelling (relationships and DAX) is the backbone of accurate reporting.
+
+* Visualisation is about telling a story, not just showing numbers.
+
+* Sharing and iteration ensure the report remains valuable over time.
+
+---
+
+## Final Phase 1 Assessment
+
+Now that you have completed all lessons, it’s time to consolidate your knowledge.
+
+### Self‑Evaluation Checklist
+
+* I can explain what Power BI is and its components.
+
+* I understand the basic BI concepts (ETL, star schema, KPIs).
+
+* I have installed Power BI Desktop and am familiar with its interface.
+
+* I can connect to various data sources (Excel, CSV, databases).
+
+* I understand the differences between Import and DirectQuery.
+
+* I can perform basic data transformations in Power Query Editor.
+
+* I can create simple relationships in the Model view.
+
+* I can create basic measures (SUM, AVERAGE).
+
+* I can build interactive reports with visuals, slicers, and filters.
+
+* I know how to publish a report to Power BI Service.
+
+* If you checked all, you are ready for Phase 2: Data Transformation and Modelling.
+
+---
+
+### Answers to Mini Quizzes
+
+#### Lesson 1.1:
+
+1. Desktop, Service, Mobile.
+
+2. Desktop is for authoring, Service is for sharing and collaboration.
+
+3. Sales performance, financial reporting, marketing analytics (any two).
+
+4. Fields pane.
+
+5. Select the visual and choose a different icon from the Visualizations pane.
+
+    ---
+
+#### Lesson 1.2:
+
+1. Extract, Transform, Load.
+
+2. Fact table contains quantitative measures; dimension tables contain descriptive attributes.
+
+3. Revenue, profit margin, customer acquisition cost (any three).
+
+4. A centralised repository of integrated data from multiple sources.
+
+5. It provides evidence‑based insights for better decision‑making.
+
+    ---
+
+#### Lesson 1.3:
+
+1. 2 GB (4 GB recommended).
+
+2. powerbi.microsoft.com/downloads.
+
+3. .exe is for individual installation; .msi is for enterprise deployment via group policy.
+
+4. OS version, .NET Framework, available RAM.
+
+    ---
+
+#### Lesson 1.4:
+
+1. Model view.
+
+2. Visualizations pane.
+
+3. Click the “+” at the bottom of the page tabs.
+
+4. To apply filters at visual, page, or report level.
+
+5. In the Visualizations pane, under the Format (paint roller) icon.
+
+    ---
+
+#### Lesson 1.5:
+
+1. Excel, SQL Server, Web (any three).
+
+2. It previews the data and lets you select which tables/columns to load.
+
+3. Use the Folder connector and combine binaries.
+
+4. Load imports immediately; Transform Data opens Power Query Editor for cleaning.
+
+5. Yes, you may need to install Oracle client drivers.
+
+    ---
+
+#### Lesson 1.6:
+
+1. Fast performance and full DAX functionality.
+
+2. When you need real‑time data and have a high‑performance source.
+
+3. Yes, but with limitations (some DAX functions not supported).
+
+4. A model that combines Import and DirectQuery tables.
+
+5. Each interaction sends a query to the source, which can be slower and put load on the source.
+
+    ---
+
+#### Lesson 1.7:
+
+1. Get Data, Transform, Model, Visualise, Share, Iterate.
+
+2. To clean, reshape, and combine data before loading.
+
+3. To ensure correct relationships and calculations for accurate reports.
+
+4. Publish to Power BI Service and share with users via workspace permissions.
+
+5. Repeatedly refining the report based on user feedback and new requirements.
+
+---
+
+**Congratulations**! 🎉 You have completed Phase 1. You now have a solid foundation in Power BI. Keep practising and building your own dashboards – the best way to learn is by doing.
+
+----
+
+<br/><br/><br/>
+<center> <b>Happy Learning! 😊</b> </center>
